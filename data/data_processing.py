@@ -39,6 +39,9 @@ def preprocess_data(path, dest):
             dest_path = os.path.join(dest, breed)
             cv2.imwrite(f'{dest_path}/{img_idx}.jpg', img)
             img_idx += 1
+            flipped_img = cv2.flip(img, 1) # flip tmage horizontally
+            cv2.imwrite(f'{dest_path}/{img_idx}.jpg', flipped_img)
+            img_idx += 1
         print('Done!')
 
 if __name__=='__main__':
