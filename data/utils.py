@@ -3,7 +3,7 @@ import numpy as np
 
 def preprocess_img(path, size):
     img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
-    processed_img = resize(pad_image(img), size)
+    processed_img = resize(img, size)
     return processed_img
 
 
