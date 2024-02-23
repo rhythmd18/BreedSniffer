@@ -1,1 +1,57 @@
+body {
+  background-image: url("/static/assets/Design.png");
+  background-size: 100%;
+  text-align: center;
+}
 
+h1 {
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 50px;
+  color: rgb(161, 16, 45);
+  margin: 20px;
+}
+
+#main-content {
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr;
+  border: solid 1px black;
+  min-height: 500px;
+  gap: 10px;
+}
+#image-upload {
+  display: flex;
+
+  border: dotted 1px black;
+  background-color: rgb(255, 136, 136);
+  /* width: 100px; */
+}
+#image-canv {
+  margin: 20px;
+  border: dotted 1px black;
+  background-color: rgb(125, 32, 32);
+}
+
+#image-input {
+  border: solid 1px black;
+}
+
+#loading-img {
+  height: 150px;
+}
+
+#loading-sign {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: dotted 1px black;
+  background-color: none;
+  /* height: min-content; */
+}
+
+#prediction-text {
+  border: dotted 1px black;
+  background-color: rgb(93, 190, 96);
+  /* width: 100px; */
+}
