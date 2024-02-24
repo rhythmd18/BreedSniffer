@@ -20,25 +20,53 @@ h1 {
   min-height: 500px;
   gap: 10px;
 }
+
+#image-input-and-detect {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+}
+
 #image-upload {
   display: flex;
-
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
   border: dotted 1px black;
-  background-color: rgb(255, 136, 136);
+  /* background-color: rgb(255, 136, 136); */
   /* width: 100px; */
 }
 #image-canv {
   margin: 20px;
   border: dotted 1px black;
-  background-color: rgb(125, 32, 32);
 }
 
 #image-input {
-  border: solid 1px black;
+  display: none;
+}
+
+#upload-btn {
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 20px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(161, 16, 45);
+  cursor: pointer;
+}
+
+#detect-btn {
+  margin: 50px 30px;
+  /* border: none; */
+  /* color: white;
+  background-image: linear-gradient(pink, rgb(255, 122, 122));*/
+  border-radius: 10px;
 }
 
 #loading-img {
-  height: 150px;
+  max-width: 150px;
 }
 
 #loading-sign {
@@ -52,6 +80,5 @@ h1 {
 
 #prediction-text {
   border: dotted 1px black;
-  background-color: rgb(93, 190, 96);
   /* width: 100px; */
 }
