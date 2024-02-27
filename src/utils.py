@@ -3,7 +3,7 @@ import torch.nn as nn
 from torchvision.transforms import v2
 from torchvision.models import vgg16, VGG16_Weights
 import joblib
-from preprocess import extract_features_for_a_batch
+from src.preprocess import extract_features_for_a_batch
 import cv2
 
 def feature_extractor():
