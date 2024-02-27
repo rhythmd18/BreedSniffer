@@ -57,6 +57,10 @@ h1 {
   cursor: pointer;
 }
 
+#detect {
+  display: none;
+}
+
 #detect-btn {
   margin: 50px 30px;
   /* border: none; */
