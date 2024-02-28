@@ -40,21 +40,21 @@ imageInput.addEventListener("change", function (event) {
 });
 
 detectBtn.addEventListener("click", function () {
-  fetch("/predict", {
+  let formdata = new FormData();
+  formdata.append("file", imgFile);
+  fetch("/predict/", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ image: imgFile }),
+    body: formdata,
   })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.status === "success") {
-        console.log(data.breed)
+    .then((response) => response.json()) // parse the response as JSON
+    .then((result) => {
+      let res = result["status"];
+      if (res === "Success"){
+        console.log(result['breed'])
       }
     })
     .catch((error) => {
-      console.log("Error: ", error);
+      console.error("Error:", error);
     });
 });
 
