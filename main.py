@@ -33,10 +33,4 @@ async def predict(file: UploadFile = File(...)):
             'status': 'Failed',
             'error': str(e)
         })
-
-    # if (img.any()):
-    #     return JSONResponse(content={
-    #         'status': 'Success',
-    #         'type': str(type(img))
-    #     })
     
