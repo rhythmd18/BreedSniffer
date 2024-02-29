@@ -71,12 +71,12 @@ h1 {
 }
 
 #loading-img {
-  max-width: 150px;
+  width: 250px;
 }
 
 #loading-sign {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   border: dotted 1px black;
   background-color: none;

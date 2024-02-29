@@ -75,16 +75,16 @@ feature_extractor_model = feature_extractor()
 classifier_model = clf()
 
 labels = [
-    'bulldog', 
-    'german shepherd', 
-    'golden retriever', 
-    'labrador retriever', 
-    'pomeranian', 
-    'poodle', 
-    'rottweiler', 
-    'siberian husky', 
-    'welsh corgi', 
-    'yorkshire terrier'
+    'Bulldog', 
+    'German shepherd', 
+    'Golden retriever', 
+    'Labrador retriever', 
+    'Pomeranian', 
+    'Poodle', 
+    'Rottweiler', 
+    'Siberian husky', 
+    'Welsh corgi', 
+    'Yorkshire terrier'
 ]
 
 

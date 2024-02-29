@@ -1,7 +1,8 @@
 const canvas = document.getElementById("image-canv");
 const ctx = canvas.getContext("2d");
 const imageInput = document.getElementById("image-input");
-const detectBtn = document.getElementById("detect-btn");
+const loadingImgEl = document.getElementById("loading-img");
+const predictionTextEl = document.getElementById("prediction-text");
 let imgFile;
 
 imageInput.addEventListener("change", function (event) {
@@ -39,7 +40,8 @@ imageInput.addEventListener("change", function (event) {
   reader.readAsDataURL(imgFile);
 });
 
-detectBtn.addEventListener("click", function () {
+function detectBreed() {
+  loadingImgEl.style.display = "flex";
   let formdata = new FormData();
   formdata.append("file", imgFile);
   fetch("/predict/", {
@@ -49,13 +51,17 @@ detectBtn.addEventListener("click", function () {
     .then((response) => response.json()) // parse the response as JSON
     .then((result) => {
       let res = result["status"];
-      if (res === "Success"){
-        console.log(result['breed'])
+      if (res === "Success") {
+        const breed = result["breed"];
+        loadingImgEl.style.display = "none";
+        displayBreed(breed);
       }
     })
     .catch((error) => {
       console.error("Error:", error);
     });
-});
+}
 
-// function displayBreed(breed) {}
+function displayBreed(breed) {
+  predictionTextEl.textContent = `A ${breed}`;
+}
