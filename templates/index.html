@@ -29,13 +29,15 @@
         <button type="submit" id="detect-btn" onclick="detectBreed()" disabled>
           Detect Breed
         </button>
+        <button type="reset" id="rm-btn" onclick="removeImage()" disabled>
+          Clear
+        </button>
       </div>
       <div id="loading-sign">
         <img
           id="loading-img"
           src="/static/assets/nn-loading.gif"
           alt="loading"
-          style="display: none;"
         />
       </div>
       <!-- <canvas id="image-canv"></canvas> -->
