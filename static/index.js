@@ -2,7 +2,10 @@ const canvas = document.getElementById("image-canv");
 const ctx = canvas.getContext("2d");
 const imageInput = document.getElementById("image-input");
 const loadingImgEl = document.getElementById("loading-img");
+const detectBtnEl = document.getElementById("detect-btn");
+const rmBtnEl = document.getElementById("rm-btn");
 const predictionTextEl = document.getElementById("prediction-text");
+const predictionTextContent = predictionTextEl.innerHTML;
 let imgFile;
 
 imageInput.addEventListener("change", function (event) {
@@ -33,7 +36,10 @@ imageInput.addEventListener("change", function (event) {
 
       ctx.drawImage(img, x, y, width, height); // draw the image on the canvas
       document.getElementById("upload-btn").style.display = "none"; // hide the upload button
-      document.getElementById("detect-btn").removeAttribute("disabled"); // enable the detect button
+      detectBtnEl.removeAttribute("disabled"); // enable the detect button
+      detectBtnEl.className = "detect-btn-active";
+      rmBtnEl.removeAttribute("disabled"); // enable the remove button
+      rmBtnEl.className = "rm-btn-active";
     };
     img.src = reader.result; // set the image source
   };
@@ -63,5 +69,17 @@ function detectBreed() {
 }
 
 function displayBreed(breed) {
+  predictionTextEl.className = "post-detection";
   predictionTextEl.textContent = `A ${breed}`;
+}
+
+function removeImage() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  document.getElementById("upload-btn").style.display = "";
+  predictionTextEl.innerHTML = predictionTextContent;
+  detectBtnEl.disabled = true;
+  detectBtnEl.className = "detect-btn-disabled";
+  rmBtnEl.disabled = true;
+  rmBtnEl.className = "rm-btn-disabled";
+  predictionTextEl.className = "pre-detection";
 }

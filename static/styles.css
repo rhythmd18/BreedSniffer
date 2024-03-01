@@ -16,7 +16,6 @@ h1 {
 #main-content {
   display: grid;
   grid-template-columns: 3fr 1fr 2fr;
-  border: solid 1px black;
   min-height: 600px;
   gap: 10px;
 }
@@ -31,10 +30,10 @@ h1 {
   flex-direction: row;
   justify-content: center;
   position: relative;
-  border: dotted 1px black;
-  /* background-color: rgb(255, 136, 136); */
-  /* width: 100px; */
+  border: ridge 5px;
+  border-radius: 25px;
 }
+
 #image-canv {
   margin: 20px;
   border: none;
@@ -51,24 +50,63 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px 20px;
-  border-radius: 10px;
+  padding: 20px 40px;
+  border-radius: 25px;
+  font-family: Poppins;
+  font-size: 20px;
   color: white;
   background-color: rgb(161, 16, 45);
   cursor: pointer;
+}
+
+#upload-btn:hover {
+  background-color: transparent;
+  border: solid 2px rgb(161, 16, 45);
+  color: rgb(161, 16, 45);
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 #detect {
   display: none;
 }
 
-#detect-btn {
-  margin: auto;
+#detect-btn,
+#rm-btn {
   padding: 30px 70px;
-  /* border: none; */
-  /* color: white;
-  background-image: linear-gradient(pink, rgb(255, 122, 122));*/
-  border-radius: 10px;
+  border-radius: 25px;
+  font-family: Poppins;
+  font-size: 20px;
+}
+
+.detect-btn-active {
+  border: none;
+  color: white;
+  background-color: rgb(161, 16, 45);
+  cursor: pointer;
+}
+
+.detect-btn-active:hover {
+  background-color: transparent;
+  border: solid 2px rgb(161, 16, 45);
+  color: rgb(161, 16, 45);
+}
+
+.rm-btn-active {
+  background-color: transparent;
+  border: solid 2px rgb(161, 16, 45);
+  color: rgb(161, 16, 45);
+  cursor: pointer;
+}
+
+.rm-btn-active:hover {
+  color: white;
+  background-color: rgb(161, 16, 45);
 }
 
 #loading-img {
@@ -80,7 +118,6 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: dotted 1px black;
   background-color: none;
   /* height: min-content; */
 }
@@ -90,11 +127,46 @@ h1 {
   border: dotted 1px black;
   justify-content: center;
   align-items: center;
-  /* width: 100px; */
+  border: ridge 5px;
+  border-radius: 25px;
 }
 
-#prediction-text {
+.pre-detection {
+  display: block;
+  text-align: left;
+  color: cadetblue;
+  font-family: Poppins;
+  font-size: 22px;
+}
+
+#breed-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breed {
+  padding-left: 0px;
+}
+
+.post-detection {
   font-family: Poppins;
   font-size: 50px;
   font-weight: lighter;
+  color: rgb(161, 16, 45);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  color: rgb(101, 101, 101);
+  font-family: Poppins;
+  font-size: 20px;
+}
+
+#my-name {
+  text-decoration: none;
+  color: inherit;
 }

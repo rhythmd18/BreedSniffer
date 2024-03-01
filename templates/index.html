@@ -26,12 +26,15 @@
           />
           <label for="image-input" id="upload-btn">Select a Dog Image</label>
         </div>
-        <button type="submit" id="detect-btn" onclick="detectBreed()" disabled>
-          Detect Breed
-        </button>
-        <button type="reset" id="rm-btn" onclick="removeImage()" disabled>
-          Clear
-        </button>
+        <div id="buttons">
+          <button type="submit" id="detect-btn" class="detect-btn-disabled" onclick="detectBreed()" disabled>
+            Detect Breed
+          </button>
+          <button type="reset" id="rm-btn" class="rm-btn-disabled" onclick="removeImage()" disabled>
+            Clear Image
+          </button>
+        </div>
+        
       </div>
       <div id="loading-sign">
         <img
@@ -43,9 +46,26 @@
       <!-- <canvas id="image-canv"></canvas> -->
       <!-- <input type="file" id="imageInput" accept="image/*" /> -->
       <div id="prediction-text-container">
-        <p id="prediction-text"></p>
+        <div id="prediction-text" class="pre-detection">
+          <p>
+            <b>Choose One of These!</b>
+            <ul id="breed-list">
+              <li class="breed">Bulldog</li>
+              <li class="breed">German Shepherd</li>
+              <li class="breed">Golden Retriever</li>
+              <li class="breed">Labrador Retriever</li>
+              <li class="breed">Pomeranian</li>
+              <li class="breed">Poodle</li>
+              <li class="breed">Rottweiler</li>
+              <li class="breed">Siberian Husky</li>
+              <li class="breed">Welsh Corgi</li>
+              <li class="breed">Yorkshire Terrier</li>
+            </ul>
+          </p>
+        </div>
       </div>
     </div>
+    <div class="footer">Created by <b><a href="https://github.com/rhythmd18" id="my-name">Rhythm</a></b> with ❤️!</div>
     <script src="/static/index.js"></script>
   </body>
 </html>
