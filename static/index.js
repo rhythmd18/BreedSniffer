@@ -2,6 +2,7 @@ const canvas = document.getElementById("image-canv");
 const ctx = canvas.getContext("2d");
 const imageInput = document.getElementById("image-input");
 const loadingImgEl = document.getElementById("loading-img");
+const loadingImgElMobile = document.getElementById("loading-sign-mobile");
 const detectBtnEl = document.getElementById("detect-btn");
 const rmBtnEl = document.getElementById("rm-btn");
 const predictionTextEl = document.getElementById("prediction-text");
@@ -47,7 +48,8 @@ imageInput.addEventListener("change", function (event) {
 });
 
 function detectBreed() {
-  loadingImgEl.style.display = "flex";
+  if (window.innerWidth > 1000) loadingImgEl.style.display = "block";
+  if (window.innerWidth <= 1000) loadingImgElMobile.style.display = "block";
   let formdata = new FormData();
   formdata.append("file", imgFile);
   fetch("/predict/", {
@@ -60,6 +62,7 @@ function detectBreed() {
       if (res === "Success") {
         const breed = result["breed"];
         loadingImgEl.style.display = "none";
+        loadingImgElMobile.style.display = "none";
         displayBreed(breed);
       }
     })

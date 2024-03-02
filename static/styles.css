@@ -124,7 +124,6 @@ h1 {
 
 #prediction-text-container {
   display: flex;
-  border: dotted 1px black;
   justify-content: center;
   align-items: center;
   border: ridge 5px;
@@ -171,6 +170,24 @@ h1 {
   color: inherit;
 }
 
+#loading-sign-mobile {
+  display: none;
+  border: solid 15px #acacac;
+  border-top: solid 15px rgb(161, 16, 45);
+  border-radius: 70px;
+  padding: 40px;
+  animation: spin 0.8s ease infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
 @media screen and (max-width: 1000px) {
   body {
     background-size: cover;
@@ -186,6 +203,12 @@ h1 {
   }
 
   .pre-detection {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 999px) {
+  #loading-sign-mobile {
     display: none;
   }
 }
