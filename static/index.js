@@ -47,6 +47,12 @@ imageInput.addEventListener("change", function (event) {
   reader.readAsDataURL(imgFile);
 });
 
+/**
+ * Function to detect the breed of an image and display it.
+ *
+ * @param {FormData} imgFile - The image file to be processed
+ * @return {void} No return value
+ */
 function detectBreed() {
   if (window.innerWidth > 1000) loadingImgEl.style.display = "block";
   if (window.innerWidth <= 1000) loadingImgElMobile.style.display = "block";
@@ -71,11 +77,21 @@ function detectBreed() {
     });
 }
 
+/**
+ * Display the breed on the page.
+ *
+ * @param {string} breed - The breed to be displayed
+ * @return {void}
+ */
 function displayBreed(breed) {
   predictionTextEl.className = "post-detection";
   predictionTextEl.textContent = `A ${breed}`;
 }
 
+/**
+ * Removes the image from the canvas and resets the UI elements for a new image upload.
+ *
+ */
 function removeImage() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   document.getElementById("upload-btn").style.display = "";
