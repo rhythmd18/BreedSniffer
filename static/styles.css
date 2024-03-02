@@ -109,17 +109,17 @@ h1 {
   background-color: rgb(161, 16, 45);
 }
 
-#loading-img {
-  display: none;
-  width: 250px;
-}
-
 #loading-sign {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: none;
   /* height: min-content; */
+}
+
+#loading-img {
+  display: none;
+  width: 250px;
 }
 
 #prediction-text-container {
@@ -169,4 +169,23 @@ h1 {
 #my-name {
   text-decoration: none;
   color: inherit;
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    background-size: cover;
+  }
+
+  #loading-sign {
+    display: none;
+  }
+
+  #main-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+  }
+
+  .pre-detection {
+    display: none;
+  }
 }
