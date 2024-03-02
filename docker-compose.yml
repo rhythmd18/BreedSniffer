@@ -1,0 +1,10 @@
+version: "1"
+services:
+  app:
+    build: .
+    container_name: breed-sniffer
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
