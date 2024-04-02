@@ -33,7 +33,7 @@ h1 {
 #image-input-and-detect {
   display: grid;
   grid-template-rows: 2fr 1fr;
-  gap: 5px;
+  gap: 10px;
 }
 
 #image-upload {
