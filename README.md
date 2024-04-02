@@ -12,7 +12,7 @@ Data was collected from Google Images using a [batch downloader](https://chromew
 
 ## Demo
 
-
+![](https://github.com/rhythmd18/BreedSniffer/blob/main/demo.gif)
 
 
 ## Files description
