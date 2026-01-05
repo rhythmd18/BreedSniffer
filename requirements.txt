@@ -1,6 +1,6 @@
 fastapi
-uvicorn
-numpy
+uvicorn[standard]
+numpy<2.0.0
 opencv-python-headless
 joblib
 scikit-learn==1.2.2
